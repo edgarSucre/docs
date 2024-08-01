@@ -45,7 +45,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-          'https://github.com/edgarSicre/doc/tree/main/',
+          'https://github.com/edgarSucre/doc/tree/main/',
         },
         blog: false,
         pages: false,
