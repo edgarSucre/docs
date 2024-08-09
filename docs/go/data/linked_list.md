@@ -5,7 +5,7 @@ sidebar_position: 1
 # Linked Lists
 
 Is a data structure that represents a list of elements on which the elements can point to another
-element. The first element of the list is called **Head** and can only point to the next element.
+element. The first element of the list is called **Head** and the  last is called **Tail**.
 
 ## Properties
 
@@ -20,41 +20,80 @@ element. The first element of the list is called **Head** and can only point to 
 
 ---
 ```go
-type LikedList struct {
-    head *Node
-    tail *Node
+type LikedList[T any] struct {
+    head *Node[T]
+    tail *Node[T]
 }
 
-type Node struct {
-    val int
+type Node[T any] struct {
+    val T
     next *Node
     prev *Node
+    size int
 }
 
-func (n Node) Next() *Node {
+func (n Node[T]) Next() *Node[T] {
     return n.next
 }
 
-func (n Node) Val() int {
+func (n Node[T]) Prev() *Node[T] {
+    return n.prev
+}
+
+func (n Node[T]) Val() T {
+    if n == nil {
+        return nil
+    }
+
     return n.val
 }
 
-func (list *LinkedList) Push(v int) {
-    node &Node{val: v}
+// add elements at the end of the list
+func (list *LinkedList[T]) Append(v T) {
+    node := &Node{val: v}
     
     if list.head == nil {
+        list.head, list.tail = node, node
+    } else {
+        list.tail.next = node
+        list.tail = node
+    }
+
+    list.size++
+}
+
+// insert elements at the start of the list
+func (list *LinkedList[T]) Prepend(v T) {
+    node := &Node{val: v}
+
+    if list.head == nil {
+        list.head, list.tail = node, node
+    } else {
+        list.head.prev = node
         list.head = node
     }
 
-    list.tail.next = node
-    list.tail = node
+    list.size++
 }
 
-func (list *LinkedList) Find(v int) *Node {
+// remove element from the start of the list, and return said element
+func (list *LinkedList[T]) Pop() Node[T] {
+    if list.head == nil {
+        return nil
+    }
+
+    n := list.head
+    list.head = list.head.next
+    n.next = nil
+
+    return n
+}
+
+func (list *LinkedList[T]) Find(v T) *Node[T] {
     return findInList(list.First(), v)
 }
 
-func findInList(node *Node, target int) *Node {
+func findInList[T any](node *Node[T], target T) *Node[T] {
     if node == nil {
         return nil
     }

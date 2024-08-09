@@ -4,7 +4,8 @@ sidebar_position: 2
 
 # Stack
 
-Data structure akin to an array with a simplified interface
+Data structure akin to an array with a simplified interface that exposes methods for inserting 
+`Push` and deleting `Pop` data. Stacks follows the `LIFO` strategy to manage it's elements.
 
 ![stack](stack.png)
 
