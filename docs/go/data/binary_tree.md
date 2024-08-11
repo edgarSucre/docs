@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 # Binary Tree
@@ -7,7 +7,7 @@ sidebar_position: 4
 Hierarchical data structure composed of `Nodes` on which every Node can have up to 2 children Nodes
 `Left` and `Right`. The top of the tree is called `Root`. 
 
-![binary_tree](binary_tree.jpeg)
+![binary_tree](img/binary_tree.jpeg)
 
 ```go
 type Node[T any] struct {

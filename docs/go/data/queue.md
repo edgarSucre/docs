@@ -4,9 +4,15 @@ sidebar_position: 3
 
 # Queue
 Data structure that follows the `FIFO` strategy to manage it's elements. It uses `Enqueue` to
-insert elements at end `Tail` of the list, and `Dequeue` to remove elements from the front `Head`.
+insert elements at `Back` of the list, and `Dequeue` to remove elements from the `Front`.
 
-![queue](queue.png)
+## Use cases
+- Message based services.
+- Used for *Breadth First Search* traversal in graphs.
+- Any type of process that requires FIFO.
+
+
+![queue](img/queue.png)
 
 ```go
 // implementing a queue with an array

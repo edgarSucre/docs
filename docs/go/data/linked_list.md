@@ -16,7 +16,7 @@ element. The first element of the list is called **Head** and the  last is calle
 | previous | pointer to the previous node (double linked list) |
 
 ---
-![linked-list](linked_list.png)
+![linked-list](img/linked_list.png)
 
 ---
 ```go
@@ -77,16 +77,17 @@ func (list *LinkedList[T]) Prepend(v T) {
 }
 
 // remove element from the start of the list, and return said element
-func (list *LinkedList[T]) Pop() Node[T] {
+// the returned boolean indicate the item was removed successfully.
+func (list *LinkedList[T]) (Pop() Node[T], bool) {
     if list.head == nil {
-        return nil
+        return nil, false
     }
 
     n := list.head
     list.head = list.head.next
     n.next = nil
 
-    return n
+    return n, true
 }
 
 func (list *LinkedList[T]) Find(v T) *Node[T] {
