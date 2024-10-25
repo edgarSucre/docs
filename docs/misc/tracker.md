@@ -25,3 +25,7 @@ sidebar_position: 2
 | ---------------- | ------ | ---------- |
 | Barber & Friends | 12.84  | 09-09-2024 |
 | Super Carnes     | 203.30 | 09-09-2024 |
+
+## Maid
+
+Entrada 21-10-2024
