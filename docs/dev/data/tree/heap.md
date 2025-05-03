@@ -1,9 +1,9 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 # Heap
-A heap is a tree based data structure that satisfies the `heap invariant`: If A is a parent node of B then A is ordered with respect to B. This separates the heap in two types `min heap` where all child node are bigger than the parent node and `max heap` with the opposite.
+A heap is a tree based data structure that satisfies the `heap invariant`: *If A is a parent node of B then A is ordered with respect to B*. This separates the heap in two types `min heap` where all child node are bigger than the parent node and `max heap` with the opposite.
 
 ## Binary heap
 A `binary heap` is a binary tree that supports the heap invariant. In a binary tree every node has exactly two children.
